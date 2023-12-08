@@ -1,0 +1,55 @@
+[
+    {
+        "id": "25c6b09efdc643f2",
+        "type": "tab",
+        "label": "플로우 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "026deb0d8abb480a",
+        "type": "inject",
+        "z": "25c6b09efdc643f2",
+        "name": "입력1",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rasp/rcv/dev",
+        "payload": "\"Hello\"",
+        "payloadType": "str",
+        "x": 110,
+        "y": 60,
+        "wires": [
+            [
+                "f3b31ff9348193dd"
+            ]
+        ]
+    },
+    {
+        "id": "f3b31ff9348193dd",
+        "type": "debug",
+        "z": "25c6b09efdc643f2",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 60,
+        "wires": []
+    }
+]

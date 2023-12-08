@@ -1,0 +1,144 @@
+[
+    {
+        "id": "e0967bb16caf518d",
+        "type": "tab",
+        "label": "플로우 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "dd94dfcac0cb45a1",
+        "type": "inject",
+        "z": "e0967bb16caf518d",
+        "name": "PC",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "rasp/rcv/dev",
+        "payload": "Hello",
+        "payloadType": "str",
+        "x": 90,
+        "y": 80,
+        "wires": [
+            [
+                "bc18d7f5ac117d2d",
+                "ae650648aa6d1de7"
+            ]
+        ]
+    },
+    {
+        "id": "ae650648aa6d1de7",
+        "type": "debug",
+        "z": "e0967bb16caf518d",
+        "name": "from PC",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 360,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "0d9fe96e7e977760",
+        "type": "mqtt in",
+        "z": "e0967bb16caf518d",
+        "name": "Rasp Client",
+        "topic": "rasp/send/dev",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "f0d2dd3a2ce16e8a",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 140,
+        "wires": [
+            [
+                "cbbca489c78e92cd"
+            ]
+        ]
+    },
+    {
+        "id": "bc18d7f5ac117d2d",
+        "type": "mqtt out",
+        "z": "e0967bb16caf518d",
+        "name": "Rasp Client",
+        "topic": "",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "f0d2dd3a2ce16e8a",
+        "x": 370,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "cbbca489c78e92cd",
+        "type": "debug",
+        "z": "e0967bb16caf518d",
+        "name": "from Rasp",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "f0d2dd3a2ce16e8a",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "192.168.0.2",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    }
+]
